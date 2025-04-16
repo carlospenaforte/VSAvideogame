@@ -16,9 +16,9 @@ namespace VSAvideogame.Features.VideoGames
         {
             public async Task<IEnumerable<Response>> Handle(Query request, CancellationToken cancellationToken)
             {
-                var games = await context.VideoGames.ToListAsync(cancellationToken);
-                return games.Select(g => new Response(g.Id, g.Title, g.Genre, g.RealeaseYear));
-            }
+                var videoGames = await context.VideoGames.ToListAsync(cancellationToken);
+                return videoGames.Select(vg => new Response(vg.Id, vg.Title, vg.Genre, vg.RealeaseYear));
+            }   
         }
 
     }

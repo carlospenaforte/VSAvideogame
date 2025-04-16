@@ -18,7 +18,7 @@ namespace VSAvideogame.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Genre = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    RealeaseYear = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    RealeaseYear = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
