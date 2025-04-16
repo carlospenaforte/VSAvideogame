@@ -24,5 +24,14 @@ namespace VSAvideogame.Features.VideoGames
     }
 
     [ApiController]
-
+    [Route("api/games")]
+    public class GetAllGamesController(ISender sender) : ControllerBase
+    {
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<GetAllGames.Response>>> GetAllGames()
+        {
+            var response = await sender.Send(new GetAllGames.Query());
+            return Ok(response);
+        }
+    }
 }
